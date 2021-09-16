@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-controller="productController">
+    <h3>products</h3>
+    <div class="container">
+        <div class="row">
+            <div class="products-wrapper" ng-repeat="product in products">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{path}}{{product.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                        <p class="card-price">{{product.price}}</p>
+                        <input type="text" ng-model="quantity">
+                        <button ng-click="addCart(product.id,quantity)">Add cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination-wrap">
+                <ul class="pagination">
+                    <li ng-repeat="page in paginationList"><a>{{page.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

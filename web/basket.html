@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="basketController">
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">description</th>
+            <th scope="col">quantity</th>
+            <th scope="col">price</th>
+            <th scope="col">remove</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="product in products">
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td><button ng-click="removeBasket(product.key)">Remove</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="aaaa" style="float: right">Total sum : {{products.total}}</div>
+
+</div>
+</body>
+</html>
